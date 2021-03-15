@@ -64,12 +64,6 @@ class Serie
      */
     private $categorieId;
 
-    public function __construct()
-    {
-        $this->utilisateurId = new ArrayCollection();
-        $this->categorieId = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -184,26 +178,10 @@ class Serie
     }
 
     /**
-     * @return Collection|categorie[]
      */
-    public function getCategorieId(): Collection
+    public function getCategorieId(): ?Categorie
     {
         return $this->categorieId;
     }
 
-    public function addCategorieId(Categorie $categorieId): self
-    {
-        if (!$this->categorieId->contains($categorieId)) {
-            $this->categorieId[] = $categorieId;
-        }
-
-        return $this;
-    }
-
-    public function removeCategorieId(Categorie $categorieId): self
-    {
-        $this->categorieId->removeElement($categorieId);
-
-        return $this;
-    }
 }
